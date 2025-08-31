@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "mlflow.fullname" . }}
+  name: mlflow
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ include "mlflow.name" . }}
+      app: mlflow
   template:
     metadata:
       labels:
-        app: {{ include "mlflow.name" . }}
+        app: mlflow
     spec:
       containers:
         - name: mlflow
